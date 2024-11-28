@@ -6,9 +6,11 @@ const Juice = ({ juice }) => {
     console.log(id);
     fetch(`http://localhost:5000/juices/${id}`, {
       method: "DELETE",
-    }).then(res =>res.json()).then(data=>{
-        console.log(data);
     })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
   };
   return (
     <div>
@@ -24,7 +26,7 @@ const Juice = ({ juice }) => {
           <h2 className="card-title">{name}</h2>
           <p>{category}</p>
           <div className="card-actions">
-            <Link to={`updateJuice/${_id}`} className="btn btn-primary">
+            <Link to={`/updateJuice/${_id}`} className="btn btn-primary">
               Update
             </Link>
             <button
